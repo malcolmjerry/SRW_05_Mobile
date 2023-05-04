@@ -1,0 +1,765 @@
+fileFormatVersion: 2
+guid: 8ef3f0121fd1e0b438fcd0eb2613d846
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: BarrierPos
+  - first:
+      1: 100002
+    second: Target
+  - first:
+      1: 100004
+    second: //RootNode
+  - first:
+      1: 100006
+    second: WB
+  - first:
+      1: 100008
+    second: Armature
+  - first:
+      1: 100010
+    second: Bone
+  - first:
+      1: 100012
+    second: Bone_end
+  - first:
+      1: 100014
+    second: shoot1
+  - first:
+      1: 100016
+    second: shoot1.001
+  - first:
+      1: 100018
+    second: shoot2
+  - first:
+      1: 100020
+    second: shoot3
+  - first:
+      1: 100022
+    second: Target.001
+  - first:
+      1: 100024
+    second: mac1
+  - first:
+      1: 100026
+    second: mac2
+  - first:
+      1: 100028
+    second: mac3
+  - first:
+      1: 100030
+    second: mac4
+  - first:
+      1: 100032
+    second: missile1
+  - first:
+      1: 100034
+    second: missile2
+  - first:
+      1: 100036
+    second: missile3
+  - first:
+      1: 100038
+    second: missile4
+  - first:
+      4: 400000
+    second: BarrierPos
+  - first:
+      4: 400002
+    second: Target
+  - first:
+      4: 400004
+    second: //RootNode
+  - first:
+      4: 400006
+    second: WB
+  - first:
+      4: 400008
+    second: Armature
+  - first:
+      4: 400010
+    second: Bone
+  - first:
+      4: 400012
+    second: Bone_end
+  - first:
+      4: 400014
+    second: shoot1
+  - first:
+      4: 400016
+    second: shoot1.001
+  - first:
+      4: 400018
+    second: shoot2
+  - first:
+      4: 400020
+    second: shoot3
+  - first:
+      4: 400022
+    second: Target.001
+  - first:
+      4: 400024
+    second: mac1
+  - first:
+      4: 400026
+    second: mac2
+  - first:
+      4: 400028
+    second: mac3
+  - first:
+      4: 400030
+    second: mac4
+  - first:
+      4: 400032
+    second: missile1
+  - first:
+      4: 400034
+    second: missile2
+  - first:
+      4: 400036
+    second: missile3
+  - first:
+      4: 400038
+    second: missile4
+  - first:
+      21: 2100000
+    second: WB001
+  - first:
+      21: 2100002
+    second: material
+  - first:
+      21: 2100004
+    second: material_0
+  - first:
+      21: 2100006
+    second: wb1_30
+  - first:
+      21: 2100008
+    second: wb1_23
+  - first:
+      21: 2100010
+    second: wb1_24
+  - first:
+      21: 2100012
+    second: wb1_25
+  - first:
+      21: 2100014
+    second: wb1_26
+  - first:
+      21: 2100016
+    second: wb1_27
+  - first:
+      21: 2100018
+    second: wb1_28
+  - first:
+      21: 2100020
+    second: wb1_29
+  - first:
+      21: 2100022
+    second: material_3
+  - first:
+      21: 2100024
+    second: material_1
+  - first:
+      21: 2100026
+    second: __Charcoal_
+  - first:
+      21: 2100028
+    second: wb6
+  - first:
+      21: 2100030
+    second: wb6_22
+  - first:
+      21: 2100032
+    second: Color_A16
+  - first:
+      21: 2100034
+    second: __Black_
+  - first:
+      21: 2100036
+    second: WB002_17
+  - first:
+      21: 2100038
+    second: WB002_18
+  - first:
+      21: 2100040
+    second: WB002_19
+  - first:
+      21: 2100042
+    second: WB002_20
+  - first:
+      21: 2100044
+    second: WB002_21
+  - first:
+      21: 2100046
+    second: wb1_15
+  - first:
+      21: 2100048
+    second: wb1_16
+  - first:
+      21: 2100050
+    second: wb055_12
+  - first:
+      21: 2100052
+    second: wb055_13
+  - first:
+      21: 2100054
+    second: wb055_14
+  - first:
+      21: 2100056
+    second: wb1
+  - first:
+      21: 2100058
+    second: wb1_10
+  - first:
+      21: 2100060
+    second: wb1_11
+  - first:
+      21: 2100062
+    second: wb07
+  - first:
+      21: 2100064
+    second: wb9_9
+  - first:
+      21: 2100066
+    second: wb9_8
+  - first:
+      21: 2100068
+    second: wb9_2
+  - first:
+      21: 2100070
+    second: wb9_7
+  - first:
+      21: 2100072
+    second: WB002
+  - first:
+      21: 2100074
+    second: WB002_6
+  - first:
+      21: 2100076
+    second: wb9
+  - first:
+      21: 2100078
+    second: wb9_1
+  - first:
+      21: 2100080
+    second: wb9_3
+  - first:
+      21: 2100082
+    second: wb055
+  - first:
+      23: 2300000
+    second: WB
+  - first:
+      33: 3300000
+    second: WB
+  - first:
+      43: 4300000
+    second: WB
+  - first:
+      74: 7400000
+    second: weapon2
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      111: 11100000
+    second: //RootNode
+  - first:
+      74: 2992502641162995161
+    second: _Rest
+  - first:
+      74: 451469763816753292
+    second: avoid
+  - first:
+      74: 4659437804184042788
+    second: defense
+  - first:
+      74: -5345307571370069998
+    second: getHit
+  - first:
+      74: -3100369314251171874
+    second: Idle
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Color_A16
+    second: {fileID: 2100000, guid: 80b8450536003244ca45520472921c32, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WB001
+    second: {fileID: 2100000, guid: b905117ae0e5a734ba5f858d2794cf83, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WB002
+    second: {fileID: 2100000, guid: 2c6a0a2987f1d2148b3cd3079a94cb04, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WB002_17
+    second: {fileID: 2100000, guid: f28eaca5ddbf5044f9908037ac1fd546, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WB002_18
+    second: {fileID: 2100000, guid: 2788fb6e23a9c2649b4273a7603f0f39, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WB002_19
+    second: {fileID: 2100000, guid: b6d37e239277d764caea23fe50f848e1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WB002_20
+    second: {fileID: 2100000, guid: 912c2fd51759bff4c830744523f1d3d3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WB002_21
+    second: {fileID: 2100000, guid: 6f54738755fd67541adfc1c2f97aa602, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WB002_6
+    second: {fileID: 2100000, guid: be37e895ef43e094f9e24493439c1117, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: __Black_
+    second: {fileID: 2100000, guid: bcc09841caebc0f4aad9ef74dc1f746a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: __Charcoal_
+    second: {fileID: 2100000, guid: 51243e844d426fd488b384aee9966211, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material
+    second: {fileID: 2100000, guid: 1d2978f08be033e42aab1004ea348653, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material_0
+    second: {fileID: 2100000, guid: c27b4050cf76e7140badf1e878a23c0f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material_1
+    second: {fileID: 2100000, guid: 0cf9249bf3342664881b18dfd1d13b58, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material_3
+    second: {fileID: 2100000, guid: 1a7f788c09debc94880c6f0e278e0712, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wb055
+    second: {fileID: 2100000, guid: b0109811289b91d42815415a9c9fda95, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wb055_12
+    second: {fileID: 2100000, guid: 9db46563961775a439eeed7eb4ef6736, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wb055_13
+    second: {fileID: 2100000, guid: d95560514be9e8f4d8dd8ffe9e571eb6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wb055_14
+    second: {fileID: 2100000, guid: 105f629d7c839424b83e02a024f26f31, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wb07
+    second: {fileID: 2100000, guid: d9006d5a52e29a64d805fc35b3872358, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wb1
+    second: {fileID: 2100000, guid: 45e4226d528323f4cbc3ed5e8eda7437, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wb1_10
+    second: {fileID: 2100000, guid: a0b16d3e8af422f4bb7552bfc8aa6312, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wb1_11
+    second: {fileID: 2100000, guid: b2a6804c8d8172244ab599c6f4e5b402, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wb1_15
+    second: {fileID: 2100000, guid: 3028f0e8f93f93f49a82488dd72d6d49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wb1_16
+    second: {fileID: 2100000, guid: 4f733604ee5232d4f92ad212e1eee2d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wb1_23
+    second: {fileID: 2100000, guid: 618bf6d5f1e1a1c42a8c237a4d278e2c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wb1_24
+    second: {fileID: 2100000, guid: c7527d0b500893d488ac162a01d626de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wb1_25
+    second: {fileID: 2100000, guid: a0e19410f3b38ee429d0b7eddf093bf9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wb1_26
+    second: {fileID: 2100000, guid: 44b5f0e0fb071ce4391d1aed01bb2130, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wb1_27
+    second: {fileID: 2100000, guid: bc63dfcf9ae10a9489737b0d54edcab7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wb1_28
+    second: {fileID: 2100000, guid: f1719a2d73509e041a3a5a4aea061f3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wb1_29
+    second: {fileID: 2100000, guid: d06c64d84587c2447bc3ea0ca82fc9fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wb1_30
+    second: {fileID: 2100000, guid: b7cb46e7d8a335b49ab1d3238a4ef95f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wb6
+    second: {fileID: 2100000, guid: 8fae51959b689a447a897b8b9330c8e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wb6_22
+    second: {fileID: 2100000, guid: 40ec3f9dd6008f5448be964ae66ffe21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wb9
+    second: {fileID: 2100000, guid: 30f8aeb64213ccc4ca75f3010be32c5b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wb9_1
+    second: {fileID: 2100000, guid: 29ed102b437776d49ac90a54c85be1ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wb9_2
+    second: {fileID: 2100000, guid: 4df2883f03c976f4e9b10f1bfed0476f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wb9_3
+    second: {fileID: 2100000, guid: e2ebcf580a4bb7048b29284a67fe94be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wb9_7
+    second: {fileID: 2100000, guid: 1a08f397be82e1c4cb4d0538ed92137a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wb9_8
+    second: {fileID: 2100000, guid: a8fcf82bd91b0a142baefaca07453b6d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wb9_9
+    second: {fileID: 2100000, guid: 9b99a1fe90678874db8ee5aa7ae79d71, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: weapon2
+      takeName: Armature|weapon2
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: _Rest
+      takeName: Armature|_Rest
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: avoid
+      takeName: Armature|avoid
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: defense
+      takeName: Armature|defense
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: getHit
+      takeName: Armature|getHit
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle
+      takeName: Armature|Idle
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.18
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 0
+    sortHierarchyByName: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 0.18
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 1
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
