@@ -132,10 +132,10 @@ public class Cursor : MonoBehaviour {
   }
 
   private void MoveCamera() {
-    Debug.Log( "myCamera: " + myCamera.name );
+    //Debug.Log( "myCamera: " + myCamera.name );
     Vector3 viewPos = myCamera.WorldToViewportPoint( transform.position );
 
-    Debug.Log( "viewPos: " + viewPos );
+    //Debug.Log( "viewPos: " + viewPos );
 
     /*
     if (viewPos.x > 0.9F && m_HorInputValue > 0 ||
@@ -148,7 +148,10 @@ public class Cursor : MonoBehaviour {
       CamLootAtMe.position = transform.position;
       CamLootAtMe.parent = null;
     }
-    else if (viewPos.x > 0.9F || viewPos.x < 0.1F || viewPos.y > 0.9F || viewPos.y < 0.1F) {
+    else if (viewPos.x > 0.9F && moveVector2.x > 0 || 
+        viewPos.x < 0.1F && moveVector2.x < 0 || 
+        viewPos.y > 0.9F && moveVector2.y > 0 || 
+        viewPos.y < 0.1F && moveVector2.y < 0) {
       //myCamera.transform.parent = transform;   //2023-05-05
       CamLootAtMe.parent = transform;
     }
@@ -367,7 +370,7 @@ public class Cursor : MonoBehaviour {
   void OnEnable() {
     //resetBoxCollider();
     mySRWInput.Enable();
-    CamLootAtMe.position = transform.position;
+    //CamLootAtMe.position = transform.position;
   }
 
 }

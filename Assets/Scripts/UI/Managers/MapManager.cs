@@ -32,10 +32,30 @@ public class MapManager : MonoBehaviour {
 
   public AbilityController3 ability;
 
+  MySRWInput mySRWInput;
+
   // Use this for initialization
   void Awake() {
+    mySRWInput = new MySRWInput();
     //myUnitMenu = Instantiate( m_MapMenuPrefab ) as GameObject;
     //myUnitMenu.SetActive( false );
+
+    mySRWInput.UI.Submit.performed += ctx => {
+      if (myStatus == (int)MapManStatus.MOVE_CUR) {   //正在地圖上移動游標
+        EffectSoundController.PLAY_MENU_CONFIRM();
+        ShowMenu();
+      }
+      else if (myStatus == (int)MapManStatus.Menu1) {   //正在顯示一級菜單
+        processMenuCmd();
+      }
+      else if (myStatus == (int)MapManStatus.SHOW_MOVE_RANGE) {   //正在顯示移動範圍
+        exitMoveRangeMode();
+        CoroutineCommon.CallWaitForOneFrame( () => {
+          EffectSoundController.PLAY_MENU_CONFIRM();
+          ShowMenu();
+        } );
+      }
+    };
   }
 
   void Start() {
@@ -52,8 +72,8 @@ public class MapManager : MonoBehaviour {
     if (myStatus == (int)MapManStatus.MOVE_CUR) {   //正在地圖上移動游標
       if (Input.GetButtonDown( "Confirm" )) {
         //audioSource.PlayOneShot( (AudioClip)Resources.Load( "SFX/menuConfirm" ) );
-        EffectSoundController.PLAY_MENU_CONFIRM();
-        ShowMenu();
+        //EffectSoundController.PLAY_MENU_CONFIRM();   //Replaced with new Input System
+        //ShowMenu();  //Replaced with new Input System
       }
       else if (Input.GetButtonDown( "Info" )) {
         if (myMapCursor.GetComponent<Cursor>().unitSelected != null) {
@@ -93,9 +113,10 @@ public class MapManager : MonoBehaviour {
         //EffectSoundController.PLAY_BACK_CANCEL();
         //BackToMap( false );
       }
+      /* //Replaced with new Input System
       else if (Input.GetButtonDown( "Confirm" )) {
         processMenuCmd();
-      }
+      }*/
     }
     else if (myStatus == (int)MapManStatus.SHOW_MOVE_RANGE) {   //正在顯示移動範圍
       if (Input.GetButtonDown( "Back" ) || Input.GetButtonDown( "Cancel" ))
@@ -107,13 +128,14 @@ public class MapManager : MonoBehaviour {
           showInfo();
         } );
       }
+      /* //Replaced with new Input System
       else if (Input.GetButtonDown( "Confirm" )) {
         exitMoveRangeMode();
         CoroutineCommon.CallWaitForOneFrame( () => {
           EffectSoundController.PLAY_MENU_CONFIRM();
           ShowMenu();
         } );
-      }
+      }*/
     }
   }
 
@@ -409,10 +431,6 @@ public class MapManager : MonoBehaviour {
     this.enabled = true;
   }
 
-  void OnEnable() {
-    //FinishCmd();
-  }
-
   void toWeaponMenu() {
     var unitWC = GetComponent<UnitWeaponController>();
     unitWC.Setup( unitSelected.GetComponent<UnitInfo>(), true, BackToMenu );
@@ -520,6 +538,16 @@ public class MapManager : MonoBehaviour {
     if (unitIndex >= list.Count) unitIndex = 0;
     else if (unitIndex < 0) unitIndex = list.Count - 1;
     return list[unitIndex];
+  }
+
+  void OnEnable() {
+    //FinishCmd();
+    mySRWInput.Enable();
+  }
+
+  void OnDisable() {
+    //FinishCmd();
+    mySRWInput.Disable();
   }
 
   /*

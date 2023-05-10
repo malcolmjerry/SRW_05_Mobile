@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class MainCamera : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+  public Transform CamLootAtMe;
+
+  // Use this for initialization
+  void Start () {
 		
 	}
 	
@@ -17,11 +19,14 @@ public class MainCamera : MonoBehaviour {
   private static readonly Plane plane = new Plane( Vector3.up, Vector3.zero );
   private static readonly Vector3 v3Center = new Vector3( 0.5f, 0.5f, 0.0f );
   public void MoveCamToCenterObject( Transform targetTransform ) {
+    CamLootAtMe.position = targetTransform.position;
+    /*
     Vector3 v3Hit = GetPositionByRay( v3Center );
     Vector3 goPos = new Vector3( targetTransform.position.x, 0, targetTransform.position.z );
     Vector3 v3Delta = goPos - v3Hit;
     var camPos = Camera.main.transform.position;
     transform.position = new Vector3( camPos.x + v3Delta.x, camPos.y, camPos.z + v3Delta.z );
+    */
   }
 
   public Vector3 GetPositionByRay( Vector3 viewPort ) {
