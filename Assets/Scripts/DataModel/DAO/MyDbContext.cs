@@ -10,6 +10,10 @@ public abstract class MyDbContext {
     this.PartsDao = PartsDao;
   }*/
 
+  public virtual string FROM_DB_FILE { protected set; get; }
+
+  public abstract void Init( string distFile );
+
   [field: SerializeField]
   public IRobotDao RobotDao { get; set; }
 

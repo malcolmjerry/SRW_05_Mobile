@@ -18,18 +18,16 @@ public class HeroData {
   };
 
   public Hero GetRandomHero( int? sex = null, int? picNo = null ) {
-    var heroListQ = HeroList.AsQueryable();
+    List<Hero> heroList = HeroList;
     if (sex.HasValue)
-      heroListQ = heroListQ.Where( h => h.Sex != sex );
+      heroList = heroList.Where( h => h.Sex != sex ).ToList();
 
     if (picNo.HasValue)
-      heroListQ = heroListQ.Where( h => h.PicNo != picNo );
+      heroList = heroList.Where( h => h.PicNo != picNo ).ToList();
 
-    List<Hero> list = heroListQ.ToList();
+    int randomIndex = new System.Random().Next( 0, heroList.Count ); 
 
-    int randomIndex = new System.Random().Next( 0, list.Count ); 
-
-    return list[randomIndex];
+    return heroList[randomIndex];
   }
 
   public Hero GetLover( int picNo ) {

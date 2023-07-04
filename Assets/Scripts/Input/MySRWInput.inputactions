@@ -707,6 +707,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Next1",
+                    "type": "Button",
+                    "id": "fd04003b-a268-4157-97b1-d84eeb090aa2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1312,6 +1321,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "CancelBack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4c455ec6-3130-4137-911e-e5ef6485ce11",
+                    "path": "<Keyboard>/o",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Next1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3737e9aa-378d-459f-89b8-eec05d71f8aa",
+                    "path": "<DualShockGamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Next1",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

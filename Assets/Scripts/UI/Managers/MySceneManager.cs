@@ -2,6 +2,9 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 using System;
+using System.IO;
+using UnityEngine.Networking;
+using UnityORM;
 
 public class MySceneManager : MonoBehaviour {
 
@@ -9,10 +12,38 @@ public class MySceneManager : MonoBehaviour {
 
   public int defaultDo = 1;
 
-	// Use this for initialization
-	void Start () {
+  MySRWInput myInput;
+
+  private void Awake() {
+    myInput = new MySRWInput();
+
+    myInput.UI.Submit.performed += ctx => doStart();
+  }
+
+  // Use this for initialization
+  private void Start() {
+    //yield return copyDbFile( "SRW_05_Encrypted.db", "SRW_05_Encrypted.db" );
+    //doStart();
+    //yield return copyDbFile( DIContainer.Instance.db.FROM_DB_FILE );
+  }
+
+  void doStart() {
+   /*
+   var coroutine = copyDbFile( DIContainer.Instance.db.FROM_DB_FILE );
+
+    object lastValue = null;
+    while (coroutine.MoveNext()) {
+      lastValue = coroutine.Current;
+    }
+    string distFile = (string)lastValue;
+    */
+    string distFile = copyDbFile( DIContainer.Instance.db.FROM_DB_FILE );
+    DIContainer.Instance.db.Init( distFile );
+
     Application.runInBackground = true;
-    var gameDataService = DIContainer.Instance.GameDataService;
+    //var gameDataService = DIContainer.Instance.GameDataService;
+
+    Debug.Log( "MySceneManager doStart" );
 
     if (defaultDo == 1) {                      //正常進入Title
       StartCoroutine( loadSceneAsync( "Title" ) );
@@ -52,6 +83,8 @@ public class MySceneManager : MonoBehaviour {
       GameObject.Find( "MyCanvas" ).GetComponent<ChapterShow>().show( gameDataService.GameData.Chapter, gameDataService.GameData.Stage );
       */
     }
+
+    enabled = false;
   }
 
   // Update is called once per frame
@@ -170,4 +203,92 @@ public class MySceneManager : MonoBehaviour {
     GameObject.Find( "MyCanvas" ).GetComponent<FadeInOut>().FullIn();
     GameObject.Find( "MyCanvas" ).GetComponent<ChapterShow>().show( gameDataService.GameData.Chapter, gameDataService.GameData.Stage );
   }
+
+  private void OnEnable() {
+    myInput.Enable();
+  }
+
+  private void OnDisable() {
+    myInput.Disable();
+  }
+
+  string copyDbFile( string fileName ) {
+    BetterStreamingAssets.Initialize();
+    string dbDestination = Path.Combine( Application.persistentDataPath, "data" );
+    dbDestination = Path.Combine( dbDestination, fileName );
+
+    Debug.Log( $"MyDbSQLite dbDestination: {dbDestination}, Exist: {File.Exists( dbDestination )}" );
+
+    byte[] result = new byte[] { };
+    //Check if the File do not exist then copy it
+    if (!File.Exists( dbDestination )) {
+      //Where the db file is at
+      string dbStreamingAsset = Path.Combine( Application.streamingAssetsPath, fileName );
+      Debug.Log( $"Application.streamingAssetsPath & fromFileName: {dbStreamingAsset}, Exist: {File.Exists( dbStreamingAsset )}" );
+
+      //result = BetterStreamingAssets.ReadAllBytes( dbStreamingAsset );
+      result = BetterStreamingAssets.ReadAllBytes( fileName );
+      Debug.Log( $"BetterStreamingAssets Loaded db file {dbStreamingAsset}" );
+
+      Directory.CreateDirectory( Path.GetDirectoryName( dbDestination ) );
+
+      //Copy the data to the persistentDataPath where the database API can freely access the file
+      File.WriteAllBytes( dbDestination, result );
+      Debug.Log( $"Copied db file {dbDestination}" );
+    }
+
+    System.IO.FileInfo fileInfo = new System.IO.FileInfo( dbDestination );
+    long fileSizeInBytes = fileInfo.Length;
+    float fileSizeInKB = fileSizeInBytes / 1024f;
+    Debug.Log( string.Format( "{0} 的檔案大小為 {1:F2} KB", fileInfo.Name, fileSizeInKB ) );
+    return dbDestination;
+  }
+
+  /*
+  IEnumerator copyDbFile( string fileName ) {
+    string dbDestination = Path.Combine( Application.persistentDataPath, "data" );
+    dbDestination = Path.Combine( dbDestination, fileName );
+
+    Debug.Log( $"MyDbSQLite dbDestination: {dbDestination}, Exist: {File.Exists( dbDestination )}" );
+
+    byte[] result = new byte[] { };
+    //Check if the File do not exist then copy it
+    if (!File.Exists( dbDestination )) {
+      //Where the db file is at
+      string dbStreamingAsset = Path.Combine( Application.streamingAssetsPath, fileName );
+      Debug.Log( $"Application.streamingAssetsPath & fromFileName: {dbStreamingAsset}, Exist: {File.Exists( dbStreamingAsset )}" );
+
+      //Read the File from streamingAssets. Use WWW for Android
+      if (dbStreamingAsset.Contains( "://" ) || dbStreamingAsset.Contains( ":///" )) {
+        UnityWebRequest www = UnityWebRequest.Get( dbStreamingAsset );
+        yield return www.SendWebRequest();
+
+        if (www.result == UnityWebRequest.Result.Success)
+          result = www.downloadHandler.data;
+        else {
+          Debug.LogError( $"Failed to load {dbStreamingAsset}: {www.error}" );
+          throw new Exception( $"Failed to load {dbStreamingAsset}: {www.error}" );
+        }
+      }
+      else {
+        result = File.ReadAllBytes( dbStreamingAsset );
+      }
+
+      //result = File.ReadAllBytes( dbStreamingAsset );
+      Debug.Log( $"Loaded db file {dbStreamingAsset}" );
+
+      Directory.CreateDirectory( Path.GetDirectoryName( dbDestination ) );
+
+      //Copy the data to the persistentDataPath where the database API can freely access the file
+      File.WriteAllBytes( dbDestination, result );
+      Debug.Log( $"Copied db file {dbDestination}" );
+    }
+
+    System.IO.FileInfo fileInfo = new System.IO.FileInfo( dbDestination );
+    long fileSizeInBytes = fileInfo.Length;
+    float fileSizeInKB = fileSizeInBytes / 1024f;
+    Debug.Log( string.Format( "{0} 的檔案大小為 {1:F2} KB", fileInfo.Name, fileSizeInKB ) );
+    yield return dbDestination;
+  }
+  */
 }

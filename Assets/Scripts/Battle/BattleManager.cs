@@ -9,7 +9,6 @@ public class BattleManager : MonoBehaviour {
 
   public Light light;
 
-
   GameObject battleEntryGO;
   BattleEntry entry;
 
@@ -19,6 +18,20 @@ public class BattleManager : MonoBehaviour {
   string sceneName;
   bool isBacked;
   bool canBack;
+
+  MySRWInput mySRWInput;
+
+  private void Awake() {
+    mySRWInput.UI.CancelBack.performed += ctx => {
+      //StartCoroutine( loadStageMapAsync() );
+      //StopAllCoroutines();
+      //fightAnimController.StopAllThing();
+      if (canBack) {
+        isBacked = true;
+        loadStageMap();
+      }
+    };
+  }
 
   // Use this for initialization
   void Start () {
@@ -74,8 +87,8 @@ public class BattleManager : MonoBehaviour {
   }
 
 	// Update is called once per frame
-	void Update () {
-    
+	void Update () {  
+    /*
     if (Input.GetButtonDown( "Back" ) || Input.GetButtonDown( "Cancel" )) {
       //StartCoroutine( loadStageMapAsync() );
       //StopAllCoroutines();
@@ -85,6 +98,7 @@ public class BattleManager : MonoBehaviour {
         loadStageMap();
       }
     }
+    */
   }
 
   public void ProcessCmd() {
@@ -160,6 +174,14 @@ public class BattleManager : MonoBehaviour {
     //GameObject.Find( "StageManager" ).GetComponent<StageManager>().AfterBattleBase();
     //StartCoroutine( AfterBattleBaseAsync() );
     GameObject.Find( "StageManager" ).GetComponent<StageManager>().AfterBattle( entry.AttackDataList );
+  }
+
+  private void OnEnable() {
+    mySRWInput.Enable();
+  }
+
+  private void OnDisable() {
+    mySRWInput.Disable();
   }
 
   /*

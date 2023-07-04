@@ -15,9 +15,15 @@ EditorUserSettings:
       value: 5209055307535d03595a0a2643750f44404f497b797f7f627f7e4467b0e5676b
       flags: 0
     RecentlyUsedSceneGuid-3:
-      value: 050652525407085e595f587a14275e44404f4f782f7e23642b2f1f62e0e23269
+      value: 5052560252565b030e0c5a70447b0944464f41732d7c7f317b7a4d64b7b5616b
       flags: 0
     RecentlyUsedSceneGuid-4:
+      value: 54050453520d5f0358565c77457109444f164e2f7878753678714960bbb1353c
+      flags: 0
+    RecentlyUsedSceneGuid-5:
+      value: 050652525407085e595f587a14275e44404f4f782f7e23642b2f1f62e0e23269
+      flags: 0
+    RecentlyUsedSceneGuid-6:
       value: 5609505555070f095e565b7043765b4445154b7c747875662c7c4f65b4e2373a
       flags: 0
     RecentlyUsedScenePath-0:
@@ -49,6 +55,9 @@ EditorUserSettings:
       flags: 0
     RecentlyUsedScenePath-9:
       value: 22424703114646680e0b0227036c78111b12352b222921353f1a1e36ecae2136ebf32f
+      flags: 0
+    UnityRemoteDevice:
+      value: 2d5e5a03
       flags: 0
     lightmappingDeviceAndPlatform:
       value: 53

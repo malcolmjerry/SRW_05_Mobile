@@ -326,7 +326,7 @@ public class AbilityController2 : MonoBehaviour {
   }
 
   private void setupWeaponBody() {
-    var weaponList = unitInfo.WeaponList?.AsQueryable().OrderBy( w => w.HitPoint ).ToList();
+    var weaponList = unitInfo.WeaponList?.OrderBy( w => w.HitPoint ).ToList();
     wmc = bodyList[3].GetComponent<WeaponMenuController>();   //第[3]頁是武器表
     wmc.Setup( weaponList?? new List<WeaponInfo>(), null, null, myCallback );
   }

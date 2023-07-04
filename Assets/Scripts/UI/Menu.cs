@@ -110,7 +110,7 @@ public class Menu : MonoBehaviour {
       cmdList[i].transform.parent = bkg;
       cmdList[i].transform.localPosition = new Vector3( 0, topY , 0 );
       cmdList[i].transform.Find( "SelectRect" ).GetComponent<Image>().color = unSelectedColor;
-      //cmd.transform.localScale = new Vector3( 1, 1, 1 );
+      cmd.transform.localScale = new Vector3( 1, 1, 1 );
       topY -= selRectHeight;
     }
 

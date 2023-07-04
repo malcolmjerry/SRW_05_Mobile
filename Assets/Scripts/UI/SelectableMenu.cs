@@ -182,7 +182,7 @@ public abstract class SelectableMenu : MonoBehaviour {
     return fullList.Skip( (page - 1) * maxRow ).Take( maxRow ).ToList();
   }
   
-  public void Setup( Action callback, Action<dynamic> next = null, bool closeSelf = true ) {
+  public void Setup( Action callback, Action<object> next = null /*Action<dynamic> next = null*/, bool closeSelf = true ) {
     this.callback = callback;
     this.next = next;
     autoCloseSelf = closeSelf;

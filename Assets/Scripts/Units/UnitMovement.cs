@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static MapManager;
 
 public class UnitMovement : MonoBehaviour {
 
@@ -51,15 +52,43 @@ public class UnitMovement : MonoBehaviour {
 
   private Action callback;
 
+  MySRWInput mySRWInput;
+
   private void Awake() {
     m_Rigidbody = GetComponent<Rigidbody>();
     directLight = GameObject.Find( "Directional light" ).GetComponent<Light>();
     intensityNormal = directLight.intensity;
     intensityDark = intensityNormal * 0;   //(float)0.75;
     myCamera = Camera.main;
+
+    mySRWInput = new MySRWInput();
+    mySRWInput.UI.Submit.performed += ctx => {
+      if (!checkOverlap()) {
+        EffectSoundController.PLAY_ACTION_FAIL();
+        Debug.Log( "不能站在此處" );
+        return;
+      }
+      EffectSoundController.PLAY_MENU_CONFIRM();
+      GetComponent<UnitController>().EndMoveMode();
+      m_MovementAudio.Stop();
+      isStanding = true;
+      enabled = false;
+    };
+
+    mySRWInput.UI.CancelBack.performed += ctx => {
+      EffectSoundController.PLAY_BACK_CANCEL();
+      m_MovementAudio.Stop();
+      isStanding = true;
+      enabled = false;
+
+      if (callback != null)
+        callback();
+      else GetComponent<UnitController>().BackFromMoveMode();
+    };
   }
 
   private void OnEnable() {
+    mySRWInput.Enable();
     m_Rigidbody.isKinematic = false;
     m_MovementInputValue = 0f;
     m_TurnInputValue = 0f;
@@ -103,6 +132,7 @@ public class UnitMovement : MonoBehaviour {
 
 
   private void OnDisable() {
+    mySRWInput.Disable();
     m_Rigidbody.isKinematic = true;
 
     Destroy( myUnitWall );
@@ -127,6 +157,7 @@ public class UnitMovement : MonoBehaviour {
     speed();
     EngineAudio();
 
+    /*
     if (Input.GetButtonDown( "Confirm" )) {
       if (!checkOverlap()) {
         EffectSoundController.PLAY_ACTION_FAIL();
@@ -149,6 +180,7 @@ public class UnitMovement : MonoBehaviour {
         callback();
       else GetComponent<UnitController>().BackFromMoveMode();
     }
+    */
   }
 
   private void speed() {

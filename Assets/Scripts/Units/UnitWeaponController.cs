@@ -70,7 +70,7 @@ public class UnitWeaponController : MonoBehaviour {
     myWeaponMenu = Instantiate( m_WeaponMenuPrefab ) as GameObject;
     //myWeaponMenu.SetActive( false );
     unitInfo.MapFightingUnit.Update();
-    var weaponList = unitInfo.MapFightingUnit.WeaponList.AsQueryable().OrderBy( w => w.HitPoint ).ToList();
+    var weaponList = unitInfo.MapFightingUnit.WeaponList.OrderBy( w => w.HitPoint ).ToList();
 
     wmc = myWeaponMenu.GetComponent<WeaponMenuController>();
     wmc.Setup( weaponList?? new List<WeaponInfo>(), !beforeMove, confirm, backMenu );

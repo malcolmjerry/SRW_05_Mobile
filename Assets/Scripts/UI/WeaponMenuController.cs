@@ -148,7 +148,7 @@ public class WeaponMenuController : MonoBehaviour {
 
     foreach (var i in weaponItemList) { i.SetActive( false ); }
 
-    weaponItemListPage = weaponItemList.AsQueryable().Skip( (page - 1) * itemPerPage ).Take( itemPerPage ).ToList();
+    weaponItemListPage = weaponItemList.Skip( (page - 1) * itemPerPage ).Take( itemPerPage ).ToList();
     foreach (var i in weaponItemListPage) { i.SetActive( true ); }
 
     /*

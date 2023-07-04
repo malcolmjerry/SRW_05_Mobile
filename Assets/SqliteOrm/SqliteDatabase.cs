@@ -46,11 +46,17 @@ namespace UnityORM {
     [DllImport( "sqlite3", EntryPoint = "sqlite3_rekey" )]
     internal static extern int sqlite3_rekey( IntPtr db, string key, int keyLength );
 
-    [DllImport( "sqlite3", EntryPoint = "wxsqlite3_config" )]
-    internal static extern int wxsqlite3_config( IntPtr db, string param, int newValue );
+    //[DllImport( "sqlite3", EntryPoint = "wxsqlite3_config" )]
+    //internal static extern int wxsqlite3_config( IntPtr db, string param, int newValue );
 
-    [DllImport( "sqlite3", EntryPoint = "wxsqlite3_config_cipher" )]
-    internal static extern int wxsqlite3_config_cipher( IntPtr db, string cipherName, string paramName, int newValue );
+    [DllImport( "sqlite3", EntryPoint = "sqlite3mc_config" )]
+    internal static extern int sqlite3mc_config( IntPtr db, string param, int newValue );
+
+    //[DllImport( "sqlite3", EntryPoint = "wxsqlite3_config_cipher" )]
+    //internal static extern int wxsqlite3_config_cipher( IntPtr db, string cipherName, string paramName, int newValue );
+
+    [DllImport( "sqlite3", EntryPoint = "sqlite3mc_config_cipher" )]
+    internal static extern int sqlite3mc_config_cipher( IntPtr db, string cipherName, string paramName, int newValue );
 
     [DllImport( "sqlite3", EntryPoint = "sqlite3_close" )]
     internal static extern int sqlite3_close( IntPtr db );
@@ -103,7 +109,7 @@ namespace UnityORM {
 
     #region Public Methods
 
-    public void Open( string path ) {
+    public void Open( string path, string key) {
       if (IsConnectionOpen) {
         throw new SqliteException( SQLITE_ERROR_ALREADY_OPENED, "There is already an open connection" );
       }
@@ -111,8 +117,9 @@ namespace UnityORM {
       if (openResult != SQLITE_OK) {
         throw new SqliteException( openResult, "Could not open database file: " + path );
       }
-      const string key = @"aaaapassword";
-      wxsqlite3_config( _connection, "cipher", 4 );  //CODEC_TYPE_SQLCIPHER
+
+      sqlite3mc_config( _connection, "cipher", 4 );    //CODEC_TYPE_SQLCIPHER
+      //wxsqlite3_config( _connection, "cipher", 4 );  //CODEC_TYPE_SQLCIPHER   //comment this if use a non-encrypted db
       //wxsqlite3_config_cipher( _connection, "sqlcipher", "kdf_iter", 256000 );
       //wxsqlite3_config_cipher( _connection, "sqlcipher", "fast_kdf_iter", 2 ); 
       //wxsqlite3_config_cipher( _connection, "sqlcipher", "hmac_use", 1 );
@@ -121,7 +128,7 @@ namespace UnityORM {
 
       //sqlite3_key是輸入金鑰，如果資料庫已加密必須先執行此函數並輸入正確金鑰才能進行操作；
       //如果資料庫沒有加密，執行此函數後進行資料庫操作反而會出現“此資料庫已加密或不是一個資料庫檔”的錯誤。
-      sqlite3_key( _connection, key, key.Length );
+      sqlite3_key( _connection, key, key.Length );  //2023-05-17 commented
 
       //sqlite3_rekey是變更金鑰或給沒有加密的資料庫添加金鑰或清空金鑰，變更金鑰或清空金鑰前必須先正確執行 sqlite3_key。
       //在正確執行 sqlite3_rekey 之後在 sqlite3_close 關閉資料庫之前可以正常操作資料庫，不需要再執行 sqlite3_key。

@@ -12,6 +12,7 @@ namespace UnityORM
 	{
 		
 		string dbFilePath;
+		readonly string key;
 		SqliteDatabase database = null;
 		
 		public SqliteDatabase Database{
@@ -19,7 +20,7 @@ namespace UnityORM
 				if(database == null){
 					database = new SqliteDatabase();
 					
-					database.Open(dbFilePath);
+					database.Open(dbFilePath, key);
 					CreateMetaTable();
 				}
 				return database;
@@ -34,9 +35,10 @@ namespace UnityORM
 		/// <param name='dbFilePath'>
 		/// Db file path.
 		/// </param>
-		public DBEvolution (string dbFilePath)
+		public DBEvolution (string dbFilePath, string key = "")
 		{
 			this.dbFilePath = dbFilePath;
+			this.key = key;
 			RecreateTableIfHashDiffers = false;
 		}
 		

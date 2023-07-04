@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static MapManager;
 
 public class TalkCanvas : MonoBehaviour {
 
@@ -12,10 +13,16 @@ public class TalkCanvas : MonoBehaviour {
   string lastShortName;
   private Action callback;
 
+  MySRWInput mySRWInput;
+
   void Awake() {
     up = transform.Find( "Up" );
     down = transform.Find( "Down" );
     geo = transform.Find( "Geo" );
+
+    mySRWInput = new MySRWInput();
+
+    mySRWInput.UI.Submit.performed += ctx => confirm();
   }
 
   // Use this for initialization
@@ -26,9 +33,7 @@ public class TalkCanvas : MonoBehaviour {
   // Update is called once per frame
   void Update() {
     if (Input.GetButtonDown( "Confirm" )) {
-      //EffectSoundController.PLAY( (AudioClip)Resources.Load( "SFX/menuConfirm" ) );
-      enabled = false;
-      callback();
+      confirm();
     }
     /*
     else if (Input.GetButtonDown( "Back" ) || Input.GetButtonDown( "Cancel" )) {
@@ -38,6 +43,12 @@ public class TalkCanvas : MonoBehaviour {
       //callback();  //Back to up level menu
       closeSelf();
     }*/
+  }
+
+  void confirm() {
+    //EffectSoundController.PLAY( (AudioClip)Resources.Load( "SFX/menuConfirm" ) );
+    enabled = false;
+    callback();
   }
 
   public void Setup( Action callback ) {
@@ -81,6 +92,14 @@ public class TalkCanvas : MonoBehaviour {
     up.gameObject.SetActive( false );
     down.gameObject.SetActive( false );
     enabled = false;
+  }
+
+  void OnEnable() {
+    mySRWInput.Enable();
+  }
+
+  void OnDisable() {
+    mySRWInput.Disable();
   }
 
 }
